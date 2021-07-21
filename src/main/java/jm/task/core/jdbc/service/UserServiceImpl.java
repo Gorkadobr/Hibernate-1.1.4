@@ -1,31 +1,37 @@
 package jm.task.core.jdbc.service;
 
+import jm.task.core.jdbc.dao.UserDao;
+import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.util.Util;
 
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    public void createUsersTable() {
-
+    UserDao d = new UserDaoJDBCImpl();
+    public void createUsersTable() throws SQLException {
+        d.createUsersTable();
     }
 
-    public void dropUsersTable() {
-
+    public void dropUsersTable() throws SQLException {
+        d.dropUsersTable();
     }
 
-    public void saveUser(String name, String lastName, byte age) {
-
+    public void saveUser(String name, String lastName, byte age) throws SQLException {
+        d.saveUser(name, lastName,age);
     }
 
-    public void removeUserById(long id) {
-
+    public void removeUserById(long id) throws SQLException {
+d.removeUserById(id);
     }
 
-    public List<User> getAllUsers() {
-        return null;
+    public List<User> getAllUsers() throws SQLException {
+        return d.getAllUsers();
     }
 
-    public void cleanUsersTable() {
-
+    public void cleanUsersTable() throws SQLException {
+        d.cleanUsersTable();
     }
 }
