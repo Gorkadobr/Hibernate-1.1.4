@@ -11,6 +11,7 @@ import java.util.List;
 
 public class UserServiceImpl implements UserService {
     UserDao d = new UserDaoJDBCImpl();
+
     public void createUsersTable() throws SQLException {
         d.createUsersTable();
     }
@@ -20,11 +21,11 @@ public class UserServiceImpl implements UserService {
     }
 
     public void saveUser(String name, String lastName, byte age) throws SQLException {
-        d.saveUser(name, lastName,age);
+        d.saveUser(name, lastName, age);
     }
 
     public void removeUserById(long id) throws SQLException {
-d.removeUserById(id);
+        d.removeUserById(id);
     }
 
     public List<User> getAllUsers() throws SQLException {
